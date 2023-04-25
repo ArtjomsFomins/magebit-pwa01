@@ -33,7 +33,16 @@ const config = {
     // CSS Modules doesn't like Tailwind's default `:`, so we use `_`.
     separator: '_',
     theme: {
-        extend: {}
+        colors: {
+            blue: {
+                dark: '#00152E'
+            }
+        },
+        extend: {
+            padding: {
+                '12.5': '3.125rem'
+            }
+        }
     }
 };
 

@@ -3,9 +3,10 @@ import { render } from 'react-dom';
 
 import store from './store';
 import app from '@magento/peregrine/lib/store/actions/app';
-import Adapter from '@magento/venia-ui/lib/components/Adapter';
 import { registerSW } from './registerSW';
 import './index.css';
+import App from '@magento/venia-ui/lib/components/App';
+import Adapter from './components/Adapter';
 
 // server rendering differs from browser rendering
 const isServer = !globalThis.document;
@@ -26,7 +27,9 @@ const tree = (
         origin={origin}
         store={store}
         styles={styles}
-    />
+    >
+        <App />
+    </Adapter>
 );
 
 if (isServer) {

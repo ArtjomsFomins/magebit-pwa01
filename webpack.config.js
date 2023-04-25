@@ -123,7 +123,8 @@ module.exports = async env => {
             DEFAULT_COUNTRY_CODE: JSON.stringify(
                 process.env.DEFAULT_COUNTRY_CODE || 'US'
             ),
-            __DEV__: process.env.NODE_ENV !== 'production'
+            __DEV__: process.env.NODE_ENV !== 'production',
+            HELLO_WORLD: JSON.stringify(process.env.HELLO_WORLD)
         }),
         new HTMLWebpackPlugin(htmlWebpackConfig)
     ];
