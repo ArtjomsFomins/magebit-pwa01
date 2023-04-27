@@ -2,12 +2,13 @@
 // Node path should be committed, but it makes preset dev impossible.
 // Local path is the only way to develop "tailwind.preset.js".
 const venia = require('@magento/pwa-theme-venia');
-// const venia = require('../pwa-theme-venia');
+const theme = require('./src/theme/tailwind.preset');
 
+// const venia = require('../pwa-theme-venia');
 const config = {
     mode: 'jit',
     // Include your custom theme here.
-    presets: [venia],
+    presets: [venia, theme],
     // Configure how Tailwind statically analyzes your code here.
     // Note that the Tailwind's `jit` mode doesn't actually use PurgeCSS.
     purge: {
@@ -31,19 +32,7 @@ const config = {
     },
     // Set the character Tailwind uses when prefixing classnames with variants.
     // CSS Modules doesn't like Tailwind's default `:`, so we use `_`.
-    separator: '_',
-    theme: {
-        colors: {
-            blue: {
-                dark: '#00152E'
-            }
-        },
-        extend: {
-            padding: {
-                '12.5': '3.125rem'
-            }
-        }
-    }
+    separator: '_'
 };
 
 module.exports = config;

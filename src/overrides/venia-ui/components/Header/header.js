@@ -19,8 +19,6 @@ import MegaMenu from '@magento/venia-ui/lib/components/MegaMenu';
 import PageLoadingIndicator from '@magento/venia-ui/lib/components/PageLoadingIndicator';
 import { useIntl } from 'react-intl';
 
-import { HelloWorld } from '../../../../components/HelloWorld/helloWorld';
-
 const SearchBar = React.lazy(() =>
     import('@magento/venia-ui/lib/components/SearchBar')
 );

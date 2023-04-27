@@ -2,7 +2,6 @@ import React from 'react';
 import { useErrorContext } from '@magento/peregrine/lib/context/unhandledErrors';
 
 import { useErrorBoundary } from '@magento/venia-ui/lib/components/App/useErrorBoundary';
-import { AppContextProvider } from '@magento/venia-ui/lib/components/App';
 import App from '../App';
 const AppContainer = () => {
     const ErrorBoundary = useErrorBoundary(App);
