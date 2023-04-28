@@ -1,0 +1,47 @@
+.root {
+    composes: root from '@magento/venia-ui/lib/components/clickable.module.css';
+    composes: h-[3rem] from global;
+    composes: min-w-[3rem] from global;
+    composes: px-2xs from global;
+    composes: py-0 from global;
+    composes: rounded-sm from global;
+    composes: relative from global;
+    composes: border-t from global;
+    composes: border-b from global;
+    composes: border-r from global;
+    composes: border-gray-light from global;
+    composes: border-solid from global;
+    composes: border-strong from global;
+}
+
+.root:first-child {
+    @apply border-l;
+}
+
+.root_selected {
+    composes: root;
+    composes: bg-gray-900 from global;
+    composes: text-white from global;
+}
+
+.root_focused {
+    composes: root;
+}
+
+.root_selected_focused {
+    composes: root_selected;
+}
+
+.root_outOfStock,
+.root_selected_outOfStock {
+    composes: root;
+    composes: bg-disabledTile from global;
+    composes: opacity-50 from global;
+    composes: text-gray-600 from global;
+}
+.root_outOfStock:after,
+.root_selected_outOfStock:after {
+    content: '';
+    border-color: rgb(var(--venia-global-color-gray-400));
+    @apply absolute w-[62px] -rotate-45 border-t-2 border-solid;
+}

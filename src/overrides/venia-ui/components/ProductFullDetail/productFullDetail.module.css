@@ -1,0 +1,279 @@
+.root {
+    composes: px-3 from global;
+    composes: lg_grid from global;
+    composes: lg_grid-flow-row from global;
+    composes: lg_items-start from global;
+    composes: lg_pl-[1.3rem] from global;
+    composes: lg_gap-x-6 from global;
+    composes: 2xl_gap-x-0 from global;
+}
+
+@media (min-width: 960px) {
+    .root {
+        grid-template-areas:
+            'images title'
+            'images errors'
+            'images options'
+            'images shipping'
+            'images quantity'
+            'images cart';
+        grid-template-columns: minmax(0, 1.5625fr) minmax(0, 1.49fr);
+        grid-template-rows: repeat(5, min-content) 1fr [fold];
+    }
+
+    .title {
+        grid-template-columns: 1fr max-content;
+    }
+}
+
+.section {
+    composes: my-0 from global;
+    composes: px-0 from global;
+    composes: lg_mt-4 from global;
+}
+
+.sectionTitle {
+    composes: flex from global;
+    composes: font-semibold from global;
+    composes: items-center from global;
+    composes: leading-normal from global;
+    composes: mb-sm from global;
+    composes: text-colorDefault from global;
+}
+
+.title {
+    composes: section;
+    composes: gap-2 from global;
+    composes: grid from global;
+    composes: items-center from global;
+    composes: leading-normal from global;
+    composes: px-sm from global;
+    grid-area: title;
+}
+
+.productName {
+    composes: font-semibold from global;
+    composes: text-colorDefault from global;
+
+    composes: lg_font-normal from global;
+    composes: lg_text-32 from global;
+}
+
+.productPrice {
+    composes: block from global;
+    composes: text-blue-dark from global;
+    composes: text-32 from global;
+    composes: font-bold from global;
+}
+
+.imageCarousel {
+    grid-area: images;
+    grid-column: 1 / 2;
+    grid-row: 1 / fold;
+    composes: max-w-[689px] from global;
+    composes: mx-auto from global;
+    composes: my-0 from global;
+
+    composes: lg_m-0 from global;
+    composes: lg_px-0 from global;
+    composes: lg_py-sm from global;
+    composes: lg_pt-[1.125rem] from global;
+}
+
+.options {
+    grid-area: options;
+    composes: mt-4 from global;
+    composes: border-t from global;
+    composes: border-gray-light from global;
+    composes: flex from global;
+    composes: pt-4 from global;
+    composes: flex-wrap from global;
+    composes: lg_flex-nowrap from global;
+}
+
+.formErrors {
+    composes: section;
+    grid-area: errors;
+}
+
+.quantity {
+    composes: section;
+    grid-area: quantity;
+    composes: !mt-7 from global;
+}
+
+.quantityTitle {
+    composes: title from '../ProductOptions/option.module.css';
+}
+
+.actions {
+    composes: gap-y-sm from global;
+    composes: grid from global;
+    composes: items-center from global;
+    composes: justify-items-center from global;
+    composes: section;
+    grid-area: cart;
+    composes: lg_border-b-0 from global;
+    composes: !mt-5 from global;
+}
+
+.description {
+    composes: section;
+    grid-column: 1 / span 1;
+    grid-row: fold / span 1;
+
+    composes: lg_border-t from global;
+    composes: lg_m-0 from global;
+    composes: lg_pl-sm from global;
+    composes: lg_pr-sm from global;
+    composes: lg_self-stretch from global;
+}
+
+.longDescription {
+    composes: mt-5 from global;
+}
+.longDescription p {
+    @apply text-sm leading-5 mb-2;
+}
+
+.longDescription ul {
+    list-style: none;
+}
+
+.longDescription li {
+    @apply text-sm;
+}
+
+.longDescription li::before {
+    content: '•';
+    @apply w-5 -ml-6 inline-block text-blue-dark;
+}
+
+.descriptionTitle {
+    composes: sectionTitle;
+}
+
+.details {
+    composes: section;
+    grid-column: 2 / span 1;
+    grid-row: fold / span 1;
+
+    composes: lg_border-t from global;
+    composes: lg_m-0 from global;
+    composes: lg_pl-sm from global;
+    composes: lg_pr-sm from global;
+    composes: lg_self-stretch from global;
+}
+
+.detailsPageBuilder {
+    composes: my-0 from global;
+    composes: mx-sm from global;
+    composes: px-0 from global;
+    composes: py-sm from global;
+    grid-column: 1 / span 2;
+}
+
+.detailsPageBuilderList {
+    list-style: none;
+}
+
+@media (min-width: 1024px) {
+    .details {
+        align-self: stretch;
+        border-top-width: 1px;
+        margin: 0;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+.detailsTitle {
+    composes: sectionTitle;
+}
+
+.related {
+    composes: border-b-0 from global;
+    composes: section;
+    grid-column: 1 / span 2;
+}
+
+.relatedTitle {
+    composes: sectionTitle;
+}
+
+.quantityRoot {
+    composes: root from '@magento/venia-ui/lib/components/QuantityStepper/quantityStepper.module.css';
+    grid-template-columns: auto 4rem auto;
+    composes: justify-start from global;
+}
+
+.unavailableContainer {
+    composes: bg-subtle from global;
+    composes: gap-x-2xs from global;
+    composes: grid from global;
+    composes: grid-flow-col from global;
+    composes: italic from global;
+    composes: items-center from global;
+    composes: justify-start from global;
+    composes: p-3 from global;
+    composes: text-subtle from global;
+    composes: w-full from global;
+}
+.actButton {
+    composes: w-full from global;
+}
+
+.shippingSection {
+    composes: border-t from global;
+    composes: border-gray-light from global;
+    composes: mt-[1.875rem] from global;
+    composes: pt-[1.875rem] from global;
+}
+.shipping {
+    grid-area: shipping;
+}
+
+.shipping :global(figure) {
+    @apply inline-block;
+}
+.shipping :global(p) {
+    @apply ml-6 text-sm;
+}
+.shipping :global(.shipping-column) {
+    @apply pt-6 pb-4 px-20 bg-[#F4F5F5] first_border-r-[#DFE1E2] first_border-solid first_border-r !flex-row !items-center;
+}
+
+.buttonText {
+    composes: ml-[1.25rem] from global;
+}
+
+.tabs {
+    composes: border-b from global;
+    composes: border-gray-light from global;
+    grid-column: span 2;
+    composes: mt-6 from global;
+}
+
+.tabsTitleWrapper {
+    composes: flex from global;
+    composes: border-b from global;
+    composes: border-gray-light from global;
+}
+
+.tabsTitle {
+    composes: border from global;
+    composes: border-solid from global;
+    composes: border-r-0 from global;
+    composes: border-b-0 from global;
+    composes: border-gray-light from global;
+    composes: py-[1.375rem] from global;
+    composes: px-[1.375rem] from global;
+    composes: text-dark from global;
+    composes: last_border-r from global;
+    composes: bg-white from global;
+}
+
+.tabsTitleActive {
+    composes: tabsTitle;
+    composes: bg-gray-default from global;
+}

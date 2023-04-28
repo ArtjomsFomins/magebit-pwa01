@@ -1,0 +1,51 @@
+.tabContent {
+    composes: pt-[1.875rem] from global;
+    composes: pb-[3.75rem] from global;
+}
+
+.tabs {
+    composes: border-b from global;
+    composes: border-gray-light from global;
+    grid-column: span 2;
+}
+
+.tabsTitleWrapper {
+    composes: flex from global;
+    composes: border-b from global;
+    composes: border-gray-light from global;
+}
+
+.tabsTitle {
+    composes: border from global;
+    composes: border-solid from global;
+    composes: border-r-0 from global;
+    composes: border-b-0 from global;
+    composes: border-gray-light from global;
+    composes: py-[1.375rem] from global;
+    composes: px-12 from global;
+    composes: text-dark from global;
+    composes: last_border-r from global;
+    composes: bg-white from global;
+}
+
+.tabsTitleActive {
+    composes: tabsTitle;
+    composes: bg-gray-default from global;
+}
+
+.tabs p {
+    @apply text-sm leading-5 mb-2;
+}
+
+.tabs ul {
+    @apply list-none;
+}
+
+.tabs li {
+    @apply text-sm;
+}
+
+.tabs li::before {
+    content: '•';
+    @apply w-5 -ml-6 inline-block text-blue-dark;
+}
